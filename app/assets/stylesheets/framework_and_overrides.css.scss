@@ -169,7 +169,7 @@ $navbar-inverse-link-active-bg: darken($navbar-inverse-bg, 7%);
 $navbar-inverse-link-disabled-color: #444444; 
 $navbar-inverse-link-disabled-bg:$navbar-inverse-bg; 
 // -> Brand
-$navbar-inverse-brand-color: $navbar-inverse-link-color; 
+$navbar-inverse-brand-color: #58FAF4; //$navbar-inverse-link-color; 
 $navbar-inverse-brand-hover-color: #ffffff; 
 $navbar-inverse-brand-hover-bg: $navbar-inverse-bg; 
 // -> Toggle
@@ -367,7 +367,8 @@ img{
 //***********************************************************
 // NAVBAR
 .navbar-brand {
-  font-size: inherit;      
+  font-size: 200%;  
+  color: $brand-danger;
 }
 //***********************************************************
 

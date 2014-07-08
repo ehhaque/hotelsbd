@@ -1,0 +1,38 @@
+<h1>All Hotels <small>Admin</small></h1>
+<p><%= link_to "Back to Admin", admin_root_path %></p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Owner</th>
+      <th>Desc</th>
+      <th>Star rating</th>
+      <th>Address</th>
+      <th>City</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hotels.each do |hotel| %>
+      <tr>
+        <td><%= hotel.name %></td>
+        <td><%= hotel.user.username %></td>
+        <td><%= hotel.desc %></td>
+        <td><%= hotel.star_rating %></td>
+        <td><%= hotel.address %></td>
+        <td><%= hotel.city %></td>
+        <td><%= link_to 'Details', hotel %></td>
+        <td><%= link_to 'Update', edit_hotel_path(hotel) %></td>
+        <td><%= link_to 'Remove Hotel', hotel, method: :delete, data: { confirm: 'Are you sure you want remove hotel permanently?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add New Hotel', new_hotel_path %>

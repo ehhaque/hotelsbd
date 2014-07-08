@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+
+  # Associations
+  has_many :hotels
+
   # Use friendly_id on Users
   extend FriendlyId
   friendly_id :friendify, use: :slugged
