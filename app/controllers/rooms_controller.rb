@@ -15,7 +15,7 @@ class RoomsController < ApplicationController
 
   # GET /rooms/new
   def new
-    @hotel = Hotel.find(params[:id])
+    @hotel = Hotel.find(params[:hotel_id])
     @room = Room.new
   end
 
@@ -24,7 +24,7 @@ class RoomsController < ApplicationController
   end
 
   def add_room
-    #@hotel = Hotel.find(params[:id])
+    @hotel = Hotel.find(params[:hotel_id])
     @room = @hotel.rooms.build(room_params)
 
 
@@ -42,7 +42,10 @@ class RoomsController < ApplicationController
   # POST /rooms
   # POST /rooms.json
   def create
-    @room = Room.new(room_params)
+    #@room = Room.new(room_params)
+
+    @hotel = Hotel.find(params[:hotel_id])
+    @room = @hotel.rooms.build(room_params)
 
     respond_to do |format|
       if @room.save
