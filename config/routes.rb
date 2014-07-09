@@ -1,4 +1,6 @@
 Hotelsbd::Application.routes.draw do
+  resources :rooms
+
   resources :hotels
 
   root "pages#home"    
@@ -7,6 +9,8 @@ Hotelsbd::Application.routes.draw do
   
   # Custom Routes
   get '/all_hotels', controller: "hotels", action: "all_hotels"
+  post '/add_room', controller: "rooms", action: "add_room"
+    
     
   devise_for :users
   

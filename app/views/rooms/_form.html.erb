@@ -1,0 +1,62 @@
+<%= form_for(@room) do |f| %>
+  <% if @room.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@room.errors.count, "error") %> prohibited this room from being saved:</h2>
+
+      <ul>
+      <% @room.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+      <%= f.label :room_type %>
+      <div class="row">
+        <div class="col-sm-3">
+          <%= f.text_field :room_type, :autofocus => true, class: "form-control" %>  
+        </div>
+      </div>
+   </div>
+      
+     
+   <div class="form-group">
+      <%= f.label :bed_type %>
+      <div class="row">
+        <div class="col-sm-3">
+          <%= f.text_field :bed_type, class: "form-control" %>  
+        </div>
+      </div>
+   </div>
+  <div class="form-group">
+      <%= f.label :num_beds %>
+      <div class="row">
+        <div class="col-sm-3">
+          <%= f.text_field :num_beds, class: "form-control" %>  
+        </div>
+      </div>
+   </div>
+  <div class="form-group">
+      <%= f.label :price %>
+      <div class="row">
+        <div class="col-sm-3">
+          <%= f.text_field :price, class: "form-control" %>  
+        </div>
+      </div>
+   </div>
+  <div class="form-group">
+      <%= f.label :currency %>
+      <div class="row">
+        <div class="col-sm-3">
+          <%= f.text_field :currency, class: "form-control" %>  
+        </div>
+      </div>
+   </div>
+  
+  <div class="row">
+      <div class="col-sm-3">
+        <%= f.submit "Add", class: "btn btn-primary" %>
+      </div>
+    </div>  
+<% end %>

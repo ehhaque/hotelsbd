@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140708002333) do
+ActiveRecord::Schema.define(version: 20140709012114) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -39,6 +39,19 @@ ActiveRecord::Schema.define(version: 20140708002333) do
 
   add_index "hotels", ["city"], name: "index_hotels_on_city"
   add_index "hotels", ["name"], name: "index_hotels_on_name", unique: true
+
+  create_table "rooms", force: true do |t|
+    t.string   "room_type"
+    t.integer  "hotel_id"
+    t.string   "bed_type"
+    t.integer  "num_beds"
+    t.decimal  "price"
+    t.string   "currency"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rooms", ["price"], name: "index_rooms_on_price"
 
   create_table "users", force: true do |t|
     t.string   "username",               default: "",    null: false
