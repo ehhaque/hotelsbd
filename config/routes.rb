@@ -1,7 +1,10 @@
 Hotelsbd::Application.routes.draw do
-  resources :rooms
+  #resources :rooms
 
-  resources :hotels
+  #resources :hotels
+  resources :hotels do
+	resources :rooms
+  end
 
   root "pages#home"    
   get "home", to: "pages#home", as: "home"

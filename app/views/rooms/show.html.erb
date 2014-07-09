@@ -30,5 +30,6 @@
   <%= @room.currency %>
 </p>
 
-<%= link_to 'Edit', edit_room_path(@room) %> |
-<%= link_to 'Back', rooms_path %>
+
+<%= link_to 'Edit', edit_hotel_room_path(@hotel, @room) %> 
+<%= link_to 'Back', hotel_rooms_path(@hotel) %>
