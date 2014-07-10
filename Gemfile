@@ -13,11 +13,6 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# development gems
-group :development, :test do
-  gem 'sqlite3', '~> 1.3.8'    # dev & test database
-  gem 'figaro', '~> 0.7.0'     # env variables
-end
 
 # Paging
 gem 'kaminari', '~> 0.15.0'
@@ -33,8 +28,15 @@ gem 'devise', '~> 3.2.2'
 
 
 # Bootstrap 3
-group :development, :test do
+group :development do
   gem 'rails_layout', '~> 0.5.11'  # Bootstrap 3 layout generator
+  gem 'sqlite3', '1.3.8'
+  gem 'figaro', '~> 0.7.0'     # env variables
 end
 
 gem 'bootstrap-sass', '~> 3.0.3.0'
+
+group :production, :test do
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor', '0.0.2'
+end
