@@ -4,8 +4,8 @@ namespace :db do
     #make_users
     make_hotels_coxs
     make_hotels_dhaka
-    make_rooms_dhaka
-    make_rooms_coxs
+    #make_rooms_dhaka
+    #make_rooms_coxs
   end
 end
 
@@ -63,7 +63,6 @@ end
 def make_rooms_dhaka
   #hotels = Hotel.all(limit: 1)
   hotel = Hotel.where(:city => 'Dhaka').first
-
 
   15.times do |n|
     
