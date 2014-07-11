@@ -1,14 +1,14 @@
-<h1>Listing rooms</h1>
+<h2>All Rooms for <%= @hotel_name %></h2>
 
-<table>
+
+<%= will_paginate @rooms%>
+<table class="table">
   <thead>
     <tr>
       <th>Room type</th>
-      <th>Hotel</th>
       <th>Bed type</th>
       <th>Num beds</th>
       <th>Price</th>
-      <th>Currency</th>
       <th></th>
       <th></th>
       <th></th>
@@ -19,19 +19,19 @@
     <% @rooms.each do |room| %>
       <tr>
         <td><%= room.room_type %></td>
-        <td><%= room.hotel_id %></td>
         <td><%= room.bed_type %></td>
         <td><%= room.num_beds %></td>
-        <td><%= room.price %></td>
-        <td><%= room.currency %></td>
-        <td><%= link_to 'Show', room %></td>
-        <td><%= link_to 'Edit', edit_room_path(room) %></td>
-        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= room.currency %><%= room.price %></td>
+        <td><%= link_to 'Details', hotel_room_path(@hotel, room) %></td>
+        <td><%= link_to 'Edit', edit_hotel_room_path(@hotel, room) %></td>
+        <td><%= link_to 'Delete', [@hotel, room], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<%= will_paginate @rooms%>
 
 <br>
 
-<%= link_to 'New Room', new_room_path %>
+<%= link_to 'Add New Room', new_hotel_room_path(@hotel) %>
+<p><%= link_to 'Back', hotels_path %></p>

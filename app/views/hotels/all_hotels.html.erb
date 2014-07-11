@@ -1,6 +1,8 @@
 <h1>All Hotels <small>Admin</small></h1>
 <p><%= link_to "Back to Admin", admin_root_path %></p>
 
+<%= will_paginate @hotels%>
+
 <table class="table">
   <thead>
     <tr>
@@ -32,6 +34,8 @@
     <% end %>
   </tbody>
 </table>
+
+<%= will_paginate @hotels%>
 
 <br>
 

@@ -11,7 +11,8 @@ class HotelsController < ApplicationController
   end
 
   def all_hotels
-     @hotels = Hotel.all
+     #@hotels = Hotel.all
+     @hotels = Hotel.paginate(page: params[:page])
   end
     
 

@@ -8,6 +8,8 @@ gem 'jquery-rails', '~> 3.0.4'
 gem 'turbolinks', '~> 2.1.0'
 gem 'jbuilder', '~> 1.5.3'
 gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'faker', '1.1.2'
+gem 'will_paginate', '3.0.4'
 
 group :doc do
   gem 'sdoc', require: false
@@ -36,7 +38,8 @@ end
 
 gem 'bootstrap-sass', '~> 3.0.3.0'
 
+# production gems for heroku
 group :production, :test do
-  gem 'pg', '0.15.1'
-  gem 'rails_12factor', '0.0.2'
+  gem 'pg'
+  gem 'rails_12factor'
 end

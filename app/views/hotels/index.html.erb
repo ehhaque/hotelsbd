@@ -1,10 +1,11 @@
-<h3>Your Listed Hotels</h3>
+<h3><%= current_user.username %>: Listed Hotels</h3>
+
 
 <table class="table">
   <thead>
     <tr>
       <th>Name</th>
-      
+      <th>All Rooms</th>
       <th>Desc</th>
       <th>Star rating</th>
       <th>Address</th>
@@ -19,7 +20,7 @@
     <% @hotels.each do |hotel| %>
       <tr>
         <td><%= hotel.name %></td>
-        
+        <td><%= link_to 'Rooms', hotel_rooms_path(hotel) %></td>
         <td><%= hotel.desc %></td>
         <td><%= hotel.star_rating %></td>
         <td><%= hotel.address %></td>
@@ -36,3 +37,4 @@
 <br>
 
 <%= link_to 'Add New Hotel', new_hotel_path %>
+
