@@ -4,7 +4,7 @@ namespace :db do
     make_users
     make_hotels_coxs
     make_hotels_dhaka
-    #make_rooms_dhaka
+    make_rooms_dhaka
     #make_rooms_coxs
   end
 end
@@ -60,7 +60,7 @@ end
 
 def make_rooms_dhaka
   #hotels = Hotel.all(limit: 1)
-  hotel = Hotel.where(:city => 'Dhaka').first
+  #hotel = Hotel.where(:city => 'Dhaka').first
 
   15.times do |n|
     
@@ -73,14 +73,17 @@ def make_rooms_dhaka
       bed_type = "Queen"
       num_beds = 2
     end
+    hotel_id = "1"
     
     price = rand(70..500)
     currency = "$"
-    hotel.rooms.create!(room_type: room_type,
+    room = Room.new(room_type: room_type,
                                             bed_type: bed_type,
                                             num_beds: num_beds,
                                             price: price,
-                                            currency: currency) 
+                                            currency: currency,
+                                            hotel_id: hotel_id) 
+    room.save!
     
   end
 end
