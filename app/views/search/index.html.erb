@@ -1,21 +1,30 @@
 
+<h2>Search Hotels</H2>
+
 <%= search_form_for @search, url:root_path do |f| %>
-  <%= f.label :price_lteq, "Price Less Than" %>
-  <%= f.search_field :price_lteq %>
-  
+  <div class="field">
+  	  <%= f.label :hotel_city_cont, "Going to City" %>
+	  <%= f.search_field :hotel_city_cont %>
+  </div>
+  <div class="field">
+	  <%= f.label :price_gteq, "Price Between" %>
+	  <%= f.search_field :price_gteq %>
+	  <%= f.label :price_lteq, "and" %>
+	  <%= f.search_field :price_lteq %>
+  </div>
   <%= f.submit "Search", class: "btn btn-primary"%>
 <% end %>
-
 
 
 <table class="table">
   <thead>
     <tr>
-      <th>Hotel</th>
-      <th>Room type</th>
-      <th>Bed type</th>
-      <th>Num beds</th>
-      <th>Price</th>
+      <%= content_tag :th, sort_link(@search, :hotel_name) %>
+      <%= content_tag :th, sort_link(@search, :room_type) %>
+      <%= content_tag :th, sort_link(@search, :bed_type) %>
+      <%= content_tag :th, sort_link(@search, :num_beds) %>
+      <%= content_tag :th, 
+      sort_link(@search, :price, 'Price', default_order: :desc) %>
       
     </tr>
   </thead>
