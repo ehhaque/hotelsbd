@@ -21,11 +21,13 @@
 	</div>
 </div>
 
+<%= will_paginate @rooms%>
 <div style = "padding-top:20px;"></div>
 <table class="table table-condensed table-hover">
   <thead>
     <tr  class="th_style">
       <%= content_tag :th, sort_link(@search, :hotel_name) %>
+      <%= content_tag :th, sort_link(@search, :hotel_city) %>
       <%= content_tag :th, sort_link(@search, :room_type) %>
       <%= content_tag :th, sort_link(@search, :bed_type) %>
       <%= content_tag :th, sort_link(@search, :num_beds) %>
@@ -40,6 +42,7 @@
     <% @rooms.each do |room| %>
       <tr>
       	<td><%= room.hotel.name %></td>
+      	<td><%= room.hotel.city %></td>
         <td><%= room.room_type %></td>
         <td><%= room.bed_type %></td>
         <td><%= room.num_beds %></td>
@@ -49,6 +52,6 @@
     <% end %>
   </tbody>
 </table>
-
+<%= will_paginate @rooms%>
 
 
