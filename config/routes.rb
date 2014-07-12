@@ -1,16 +1,16 @@
 Hotelsbd::Application.routes.draw do
-  #resources :rooms
-
-  #resources :hotels
+  #get "search/index"
+  
   resources :hotels do
 	   resources :rooms
   end
 
-  root "pages#home"    
+  root "search#index"
   get "home", to: "pages#home", as: "home"
   get "inside", to: "pages#inside", as: "inside"
   
   # Custom Routes
+  get '/', controller: "search", action: "index"
   get '/all_hotels', controller: "hotels", action: "all_hotels"
   post '/add_room', controller: "rooms", action: "add_room"
     

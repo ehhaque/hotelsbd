@@ -8,6 +8,8 @@ class Room < ActiveRecord::Base
 	validates :num_beds,  presence: true
 	validates :price,  presence: true
 	validates :currency,  presence: true
+	validates :price, :numericality => {:only_decimal => true}
+	validates :num_beds, :numericality => {:only_integer => true}
 end
 
 

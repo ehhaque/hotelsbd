@@ -1,0 +1,16 @@
+<div id="hero" style="display:block;" data-native-currency="USD" class="">
+  <ul class="list-unstyled" id="slideshow">
+        <li class="next left" data-bg-opacity="1" style="display: block;">
+        <%= image_tag("Shampaan_1.jpg", alt: "Coxs_Beach", 
+        :size => "2000x400")   %>
+        
+        </li>
+        <li>
+        	<%= search_form_for @search do |f| %>
+			  <%= f.label :price_cont %>
+			  <%= f.search_field :price_cont %>
+			  <%= f.submit "Search", class: "btn btn-primary" %>
+			<% end %>
+        </li>
+    </ul>
+</div>

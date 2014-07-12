@@ -1,0 +1,38 @@
+
+<%= search_form_for @search, url:root_path do |f| %>
+  <%= f.label :price_lteq, "Price Less Than" %>
+  <%= f.search_field :price_lteq %>
+  
+  <%= f.submit "Search", class: "btn btn-primary"%>
+<% end %>
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Hotel</th>
+      <th>Room type</th>
+      <th>Bed type</th>
+      <th>Num beds</th>
+      <th>Price</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rooms.each do |room| %>
+      <tr>
+      	<td><%= room.hotel.name %></td>
+        <td><%= room.room_type %></td>
+        <td><%= room.bed_type %></td>
+        <td><%= room.num_beds %></td>
+        <td><%= room.currency %><%= room.price %></td>
+       
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
