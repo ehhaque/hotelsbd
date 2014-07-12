@@ -200,14 +200,18 @@ $nav-tabs-justified-active-link-border-color: $body-bg;
 // Tables
 // -> Default padding for <th>s and <td>s
 $table-cell-padding: 8px; 
+.th_style{
+  font-size:medium;
+  
+}
 // -> Default padding cells in .table-condensed
 $table-condensed-cell-padding: 5px;
 // -> Default background color used for all tables.
 $table-bg: $body-bg; 
 // -> Background color used for .table-striped.
-$table-bg-accent: #f9f9f9; 
+$table-bg-accent: #D8D8D8; 
 // -> Background color used for .table-hover.
-$table-bg-hover: #f5f5f5; 
+$table-bg-hover: #D8D8D8; 
 // -> Border color for table and cell borders.
 $table-border-color: #dddddd; 
 
@@ -422,11 +426,23 @@ img{
 }
 //***********************************************************
 
-.search-form{
+.search-pane{
   padding-top:60px;
   padding-left:10px;
   height:250px;
-  background-image:url('Shampaan_3.jpg');
-  color: white;
-  font-size:medium;
+  background-image:asset-url('Shampaan_3.jpg'); 
+  
 }
+
+.search-form{
+  padding-top:15px;
+  padding-left:10px;
+  padding-bottom:10px;
+  background-color:white;
+  color: black;
+  font-size:medium;
+  
+  border-radius: 10px;
+  width:600px;
+}
+
