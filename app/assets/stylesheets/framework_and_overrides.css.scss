@@ -429,9 +429,9 @@ img{
 .search-pane{
   padding-top:60px;
   padding-left:10px;
-  height:250px;
-  background-image:asset-url('Shampaan_3.jpg'); 
-  
+  height: 400px;
+  background-image:asset-url('Shampaan_3.jpg', class="img-responsive"); 
+
 }
 
 .search-form{
@@ -442,6 +442,5 @@ img{
   color: black;
   font-size:medium;
   border-radius: 10px;
-  
-}
+ }
 
