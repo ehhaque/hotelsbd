@@ -1,7 +1,7 @@
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
-    #make_users
+    make_users
     make_hotels_coxs
     make_hotels_dhaka
     make_hotels_ctg
@@ -23,6 +23,16 @@ def make_users
                   )
   admin.skip_confirmation!
   admin.save!
+
+  user1 = User.new(
+                      username: "user1",
+                      email: "user1@example.com",
+                      password: "1234",
+                      password_confirmation: "1234",
+                      admin: false
+                  )
+  user1.skip_confirmation!
+  user1.save!
 
 end
 
