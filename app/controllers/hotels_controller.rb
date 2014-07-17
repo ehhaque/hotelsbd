@@ -24,6 +24,7 @@ class HotelsController < ApplicationController
   # GET /hotels/new
   def new
     @hotel = Hotel.new
+    @cities = City.all
   end
 
   # GET /hotels/1/edit

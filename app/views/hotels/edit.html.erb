@@ -38,7 +38,7 @@
       <%= f.label :star_rating %>
       <div class="row">
         <div class="col-sm-3">
-          <%= f.text_field :star_rating, class: "form-control" %>  
+            <%= f.collection_select(:star_rating, StarRating.all, :rating, :rating,  :include_blank => "Hotel Star Rating...", class: "form-control") %>
         </div>
       </div>
    </div>
@@ -56,7 +56,7 @@
       <%= f.label :city %>
       <div class="row">
         <div class="col-sm-3">
-          <%= f.text_field :city, class: "form-control" %>  
+           <%= f.collection_select(:city, City.all, :name, :name, :include_blank => "Please select a city...", class: "form-control") %>
         </div>
       </div>
    </div>

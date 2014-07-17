@@ -1,4 +1,12 @@
 Hotelsbd::Application.routes.draw do
+  resources :bed_types
+
+  resources :room_types
+
+  resources :star_ratings
+
+  resources :cities
+
   #get "search/index"
   
   resources :hotels do

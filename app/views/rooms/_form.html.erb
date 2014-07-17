@@ -18,17 +18,19 @@
       <%= f.label :room_type %>
       <div class="row">
         <div class="col-sm-3">
-          <%= f.text_field :room_type, :autofocus => true, class: "form-control" %>  
+          <%= f.collection_select(:room_type, RoomType.all, :name, :name, 
+          :include_blank => "Please select room type...", class: "form-control") %>  
         </div>
       </div>
    </div>
-      
-     
+
+        
    <div class="form-group">
       <%= f.label :bed_type %>
       <div class="row">
         <div class="col-sm-3">
-          <%= f.text_field :bed_type, class: "form-control" %>  
+          <%= f.collection_select(:bed_type, BedType.all, :name, :name, 
+          :include_blank => "bed type...", class: "form-control") %>  
         </div>
       </div>
    </div>
@@ -41,18 +43,10 @@
       </div>
    </div>
   <div class="form-group">
-      <%= f.label :price %>
+      <%= f.label :price, "Price $"  %>
       <div class="row">
         <div class="col-sm-3">
           <%= f.text_field :price, class: "form-control" %>  
-        </div>
-      </div>
-   </div>
-  <div class="form-group">
-      <%= f.label :currency %>
-      <div class="row">
-        <div class="col-sm-3">
-          <%= f.text_field :currency, class: "form-control" %>  
         </div>
       </div>
    </div>

@@ -1,7 +1,7 @@
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
-    make_users
+    #make_users
     make_hotels_coxs
     make_hotels_dhaka
     make_hotels_ctg

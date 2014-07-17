@@ -6,6 +6,7 @@ class Hotel < ActiveRecord::Base
 
 	validates :name,  presence: true
 	validates :star_rating,  presence: true
+	validates :address, presence: true, length: { maximum: 140 }
 	validates :city,  presence: true
 
 end

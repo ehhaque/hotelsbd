@@ -38,7 +38,7 @@ class RoomsController < ApplicationController
     respond_to do |format|
       if @room.save
         #format.html { redirect_to @room, notice: 'Room was successfully created.' }
-        format.html { redirect_to [@hotel, @room], notice: 'Child was successfully created.' }
+        format.html { redirect_to hotel_rooms_path, notice: 'Room was successfully created.' }
         format.json { render action: 'show', status: :created, location: @room }
       else
         format.html { render action: 'new' }

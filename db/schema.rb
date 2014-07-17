@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140709012114) do
+ActiveRecord::Schema.define(version: 20140717003008) do
+
+  create_table "bed_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cities", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -40,6 +52,12 @@ ActiveRecord::Schema.define(version: 20140709012114) do
   add_index "hotels", ["city"], name: "index_hotels_on_city"
   add_index "hotels", ["name"], name: "index_hotels_on_name", unique: true
 
+  create_table "room_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "rooms", force: true do |t|
     t.string   "room_type"
     t.integer  "hotel_id"
@@ -52,6 +70,19 @@ ActiveRecord::Schema.define(version: 20140709012114) do
   end
 
   add_index "rooms", ["price"], name: "index_rooms_on_price"
+
+  create_table "search_suggestions", force: true do |t|
+    t.string   "term"
+    t.integer  "popularity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "star_ratings", force: true do |t|
+    t.integer  "rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "username",               default: "",    null: false

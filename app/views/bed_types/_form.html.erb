@@ -1,0 +1,27 @@
+<%= form_for(@bed_type) do |f| %>
+  <% if @bed_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bed_type.errors.count, "error") %> prohibited this bed_type from being saved:</h2>
+
+      <ul>
+      <% @bed_type.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="form-group">
+      <%= f.label :name %>
+      <div class="row">
+        <div class="col-sm-4">
+          <%= f.text_field :name, :autofocus => true, class: "form-control" %>  
+        </div>
+      </div>
+   </div>
+  <div class="row">
+      <div class="col-sm-3">
+        <%= f.submit "Create", class: "btn btn-primary" %>
+      </div>
+    </div> 
+<% end %>

@@ -1,9 +1,24 @@
 <h1>Admin <small>Home</small></h1>
 <div class="row">
   <div class="col-sm-4">
-    <h3>Menu</h3>
-    <h4><%= link_to "All Hotels", all_hotels_path %> <small>- <%= "#{@h_count} hotels" %></small></h4>
-    <h4><%= link_to "Users", admin_users_path %> <small>- <%= "#{@count} users" %></small></h4>
+    <h3>Manage Data</h3>
+    <ul class="list-unstyled">
+      <li><h4><%= link_to "All Hotels", all_hotels_path %> <small>- <%= "#{@h_count} hotels" %></small></h4>
+        <ul>
+            <li><h4><%= link_to "Cities", cities_path %>
+              <small>- <%= "#{@count} cities" %></small></h4></li>
+            <li><h4><%= link_to "Hotel Star Ratings", star_ratings_path %></h4></li>
+            <li><h4><%= link_to "Room Type", room_types_path %></h4></li>
+            <li><h4><%= link_to "Bed Type", bed_types_path %></h4></li>
+        </ul>
+      </li>
+      <li><h4><%= link_to "Users", admin_users_path %> 
+        <small>- <%= "#{@count} users" %></small></h4></li>
+    </ul>
+    
+    
+    
+    
     <hr/>
   </div>
   
