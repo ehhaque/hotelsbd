@@ -1,4 +1,6 @@
 Hotelsbd::Application.routes.draw do
+  resources :paintings
+
   resources :bed_types
 
   resources :room_types

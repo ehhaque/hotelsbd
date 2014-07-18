@@ -1,0 +1,33 @@
+<h1>Listing paintings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Image</th>
+      <th>Room</th>
+      <th>Hotel</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @paintings.each do |painting| %>
+      <tr>
+        <td><%= painting.name %></td>
+        <td><%= painting.image %></td>
+        <td><%= painting.room_id %></td>
+        <td><%= painting.hotel_id %></td>
+        <td><%= link_to 'Show', painting %></td>
+        <td><%= link_to 'Edit', edit_painting_path(painting) %></td>
+        <td><%= link_to 'Destroy', painting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Painting', new_painting_path %>

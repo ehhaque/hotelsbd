@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140717003008) do
+ActiveRecord::Schema.define(version: 20140718065956) do
 
   create_table "bed_types", force: true do |t|
     t.string   "name"
@@ -38,6 +38,12 @@ ActiveRecord::Schema.define(version: 20140717003008) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
+  create_table "galleries", force: true do |t|
+    t.integer  "room_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "hotels", force: true do |t|
     t.string   "name"
     t.integer  "user_id"
@@ -51,6 +57,15 @@ ActiveRecord::Schema.define(version: 20140717003008) do
 
   add_index "hotels", ["city"], name: "index_hotels_on_city"
   add_index "hotels", ["name"], name: "index_hotels_on_name", unique: true
+
+  create_table "paintings", force: true do |t|
+    t.string   "name"
+    t.string   "image"
+    t.integer  "room_id"
+    t.integer  "hotel_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "room_types", force: true do |t|
     t.string   "name"
