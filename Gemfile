@@ -12,6 +12,7 @@ gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem "ransack" 
 #gem "rmagick"
+gem "mini_magick"
 gem "carrierwave"
 
 group :doc do

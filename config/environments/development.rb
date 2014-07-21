@@ -38,4 +38,9 @@ Hotelsbd::Application.configure do
     user_name: ENV["SMTP_USER"],
     password: ENV["SMTP_PWD"]
   }
+
+  # Ehtesham Haque
+  # Jul 17 2014
+  # Needed For Mini Magick to work with ImageMagick
+  ENV['PATH'] += File::PATH_SEPARATOR + 'C:\ImageMagick-6.8.9-Q16'
 end
