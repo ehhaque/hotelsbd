@@ -14,6 +14,11 @@ class Room < ActiveRecord::Base
 	validates :price, :numericality => {:only_decimal => true}
 	validates :num_beds, numericality: {only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 10}
 	validates :price, numericality: {only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 100000}
+
+	def first_pic
+		@painting = self.paintings.first
+	end
+
 end
 
 

@@ -55,7 +55,13 @@
 		  <tbody>
 		    <% @rooms.each do |room| %>
 		      <tr>
-		      	<td><%= image_tag room.paintings.first.image_url.to_s %>
+		      	<td>		      		
+				    <%  painting = room.paintings.first %>
+				    	<% if painting.present? %>	
+						    <div class="painting">
+						       <%= image_tag painting.image_url(:thumb) if painting.image? %>
+						    </div>		    
+					    <% end %>							   					
 		      	</td>
 		      	<td><%= room.hotel.name %></td>
 		      	<td><%= room.hotel.city %></td>
