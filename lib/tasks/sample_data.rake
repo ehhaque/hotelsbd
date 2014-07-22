@@ -1,7 +1,10 @@
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
-    make_users
+    
+    #if RAILS_ENV == "production"
+    #  make_users
+    #end
     make_hotels_coxs
     make_hotels_dhaka
     make_hotels_ctg
@@ -220,10 +223,14 @@ def make_rooms_dhaka
       room_type  = "Suite"
       bed_type = "King"
       num_beds = 1
+      image_path = "C:/RubyRailsProjects/hotelsbd/app/assets/images/dhaka_3.jpg"
+      image = File.open(image_path)
     else
       room_type  = "Luxury Suite"
       bed_type = "Queen"
       num_beds = 2
+      image_path = "C:/RubyRailsProjects/hotelsbd/app/assets/images/dhaka_1.jpg"
+      image = File.open(image_path)
     end
     hotel_id = "4"
     
@@ -236,6 +243,9 @@ def make_rooms_dhaka
                                             currency: currency,
                                             hotel_id: hotel_id) 
     room.save!
+    # Add Image
+    
+    room.paintings.create!(image: image)  
     
   end
 end
@@ -247,10 +257,14 @@ def make_rooms_coxs
       room_type  = "Suite"
       bed_type = "King"
       num_beds = 1
+      image_path = "C:/RubyRailsProjects/hotelsbd/app/assets/images/coxs_1.jpg"
+      image = File.open(image_path)
     else
       room_type  = "Luxury Suite"
       bed_type = "Queen"
       num_beds = 2
+      image_path = "C:/RubyRailsProjects/hotelsbd/app/assets/images/coxs_2.jpg"
+      image = File.open(image_path)
     end
     hotel_id = "1"
     price = rand(70..500)
@@ -261,6 +275,9 @@ def make_rooms_coxs
                                             price: price,
                                             currency: currency,
                                             hotel_id: hotel_id) 
+    room.save!
+    # Add Image
+    room.paintings.create!(image: image)  
     
   end
 end
@@ -291,6 +308,10 @@ def make_rooms_ctg
                                             currency: currency,
                                             hotel_id: hotel_id) 
     room.save!
+    # Add Image
+    image_path = "C:/RubyRailsProjects/hotelsbd/app/assets/images/Ctg_1.jpg"
+    image = File.open(image_path)
+    room.paintings.create!(image: image)  
     
   end
 end
@@ -305,10 +326,14 @@ def make_rooms_sylhet
       room_type  = "Suite"
       bed_type = "King"
       num_beds = 1
+      image_path = "C:/RubyRailsProjects/hotelsbd/app/assets/images/syl_1.jpg"
+      image = File.open(image_path)
     else
       room_type  = "Luxury Suite"
       bed_type = "Queen"
       num_beds = 2
+      image_path = "C:/RubyRailsProjects/hotelsbd/app/assets/images/syl_2.jpg"
+      image = File.open(image_path)
     end
     hotel_id = "10"
     
@@ -321,6 +346,9 @@ def make_rooms_sylhet
                                             currency: currency,
                                             hotel_id: hotel_id) 
     room.save!
+    # Add Image
+    room.paintings.create!(image: image)  
+           
     
   end
 end

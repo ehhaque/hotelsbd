@@ -21,6 +21,7 @@ Hotelsbd::Application.routes.draw do
   
   # Custom Routes
   get '/', controller: "search", action: "index"
+  get '/search', controller: "search", action: "search"
   get '/all_hotels', controller: "hotels", action: "all_hotels"
   post '/add_room', controller: "rooms", action: "add_room"
     
