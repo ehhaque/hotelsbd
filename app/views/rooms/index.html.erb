@@ -18,11 +18,12 @@
   <tbody>
     <% @rooms.each do |room| %>
       <tr>
-        <td><%= room.room_type %></td>
+        
+        <td><%= link_to room.room_type, hotel_room_path(@hotel, room) %></td>
         <td><%= room.bed_type %></td>
         <td><%= room.num_beds %></td>
         <td><%= room.currency %><%= room.price %></td>
-        <td><%= link_to 'Details', hotel_room_path(@hotel, room) %></td>
+        
         <td><%= link_to 'Edit', edit_hotel_room_path(@hotel, room) %></td>
         <td><%= link_to 'Delete', [@hotel, room], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -33,5 +34,5 @@
 
 <br>
 
-<%= link_to 'Add New Room', new_hotel_room_path(@hotel) %>
+<%= link_to 'Add New Room', new_hotel_room_path(@hotel), class: "btn btn-success" %>
 <p><%= link_to 'Back', hotels_path %></p>

@@ -39,6 +39,7 @@
 		<table class="table table-condensed table-hover">
 		  <thead>
 		    <tr  class="th_style">
+		      <th></th>
 		      <%= content_tag :th, sort_link(@search, :hotel_name) %>
 		      <%= content_tag :th, sort_link(@search, :hotel_city) %>
 		      <%= content_tag :th, sort_link(@search, :room_type) %>
@@ -54,6 +55,8 @@
 		  <tbody>
 		    <% @rooms.each do |room| %>
 		      <tr>
+		      	<td><%= image_tag room.paintings.first.image_url.to_s %>
+		      	</td>
 		      	<td><%= room.hotel.name %></td>
 		      	<td><%= room.hotel.city %></td>
 		        <td><%= room.room_type %></td>

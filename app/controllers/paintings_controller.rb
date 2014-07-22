@@ -1,5 +1,7 @@
 class PaintingsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_painting, only: [:show, :edit, :update, :destroy]
+
 
   # GET /paintings
   # GET /paintings.json
@@ -25,10 +27,12 @@ class PaintingsController < ApplicationController
   # POST /paintings.json
   def create
     @painting = Painting.new(painting_params)
+    @room = @painting.room
+    @hotel = @room.hotel
 
     respond_to do |format|
       if @painting.save
-        format.html { redirect_to @painting, notice: 'Painting was successfully created.' }
+        format.html { redirect_to hotel_room_path(@hotel, @room), notice: 'Painting was successfully created.' }
         format.json { render action: 'show', status: :created, location: @painting }
       else
         format.html { render action: 'new' }
@@ -42,7 +46,9 @@ class PaintingsController < ApplicationController
   def update
     respond_to do |format|
       if @painting.update(painting_params)
-        format.html { redirect_to @painting, notice: 'Painting was successfully updated.' }
+        @room = @painting.room
+        @hotel = @room.hotel
+        format.html { redirect_to hotel_room_path(@hotel, @room), notice: 'Painting was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -54,9 +60,11 @@ class PaintingsController < ApplicationController
   # DELETE /paintings/1
   # DELETE /paintings/1.json
   def destroy
+    @room = @painting.room
+    @hotel = @room.hotel
     @painting.destroy
     respond_to do |format|
-      format.html { redirect_to paintings_url }
+      format.html { redirect_to hotel_room_path(@hotel, @room) }
       format.json { head :no_content }
     end
   end

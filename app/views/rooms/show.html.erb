@@ -1,6 +1,10 @@
 
+<%= link_to 'Edit Room |', edit_hotel_room_path(@hotel, @room) %> 
 
-<dl class="dl-horizontal">
+<div class="row">
+  
+  <div class="col-md-6">
+    <dl class="dl-horizontal">
     
       <dt>Room Type</dt>
       <dd><%= @room.room_type %><dd>
@@ -17,25 +21,35 @@
       <dt>Curreny</dt>
       <dd><%= @room.currency %><dd>
       
-</dl>
+    </dl>
+
+  </div>
+  <div class="col-md-6">
+    
+  </div>
+</div>
+
+
+
 
 <div id="paintings">
   <% for painting in @room.paintings %>
     <div class="painting">
-       <%= image_tag painting.image_url(:thumb) if painting.image? %>
-      <div class="name"><%= painting.name %></div>
-      <div class="actions">
-        <%= link_to "edit", edit_painting_path(painting) %> |
+       <div >
         <%= link_to "remove", painting, :confirm => 'Are you sure?', :method => :delete %>
       </div>
+       <%= image_tag painting.image_url(:thumb) if painting.image? %>
+            
     </div>
   <% end %>
   <div class="clear"></div>
 </div>
 
-<p>
-  <%= link_to "Add a Picture", new_painting_path(:room_id => @room) %> |
-    <%= link_to "View Galleries", paintings_path %>
-</p>
-<%= link_to 'Edit', edit_hotel_room_path(@hotel, @room) %> 
-<%= link_to 'All Rooms', hotel_rooms_path(@hotel) %>
+<div class="row" style="padding-top:15px;">
+      <div class="col-sm-3">
+        <%= link_to "Add a Picture", new_painting_path(:room_id => @room), 
+  class: "btn btn-success" %> 
+      </div>
+</div>  
+<%= link_to 'Back', hotel_rooms_path(@hotel)%>
+
