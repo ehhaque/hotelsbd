@@ -1,19 +1,27 @@
 
 <div class="row">
   <div class="col-md-12">
-  	<div class="search-pane">
+  	<div class="search-pane-results">
   		<div class="row">
 		  <div class="col-md-8">
-		  	<div class="search-form">
+		  	<div class="search-form-results">
 			<%= search_form_for @search, url:search_path, 
 			:html => { :class => "form-inline", :role => "form"} do |f| %>
+		
 
 			  <div class="form-group" style="padding-bottom:10px;">
-			  	  <%= f.label :hotel_city_cont, "Going to City", 
+			  	  <%= f.label :hotel_city_cont, "City", 
+			  	  	  :html => { :class => "sr-only"} %>
+				  <%= f.collection_select(:hotel_city_cont, City.all, :name, :name, :include_blank => "Please select a city...", 
+				  		class: "form-control", :autofocus => true) %>
+			  </div>
+			  <div class="form-group" style="padding-bottom:10px;">
+			  	  <%= f.label :hotel_name_cont, "or Hotel", 
 			  	  :html => { :class => "sr-only"} %>
-				  <%= f.search_field :hotel_city_cont, 
+				  <%= f.search_field :hotel_name_cont, 
 			  	  :html => { :placeholder => "City"} %>
 			  </div>
+
 			  <div class="form-group">
 				  <%= f.label :price_gteq, "Price between" %>
 				  <%= f.search_field :price_gteq %>
@@ -27,6 +35,7 @@
 		  </div>		  
 		</div>
 			
+	
 	</div>
   </div>
 </div>

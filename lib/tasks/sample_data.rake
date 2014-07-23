@@ -2,9 +2,8 @@ namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
     
-    #if RAILS_ENV == "production"
-    #  make_users
-    #end
+    
+    make_users if Rails.env.production?    
     make_hotels_coxs
     make_hotels_dhaka
     make_hotels_ctg

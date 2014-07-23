@@ -434,6 +434,13 @@ img{
 
 }
 
+.search-pane-results{
+  padding-top:60px;
+  padding-left:10px;
+}
+
+
+
 .search-form{
   padding-top:15px;
   padding-left:10px;
@@ -442,5 +449,16 @@ img{
   color: black;
   font-size:medium;
   border-radius: 10px;
+ }
+
+.search-form-results{
+  padding-top:15px;
+  padding-left:10px;
+  padding-bottom:10px;
+  background-color:#BEF781;
+  color: black;
+  font-size:medium;
+  border-radius: 10px;
+  
  }
 
