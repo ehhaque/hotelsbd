@@ -39,6 +39,7 @@ Hotelsbd::Application.configure do
     password: ENV["SMTP_PWD"]
   }
 
+
   # Ehtesham Haque
   # Jul 17 2014
   # Needed For Mini Magick to work with ImageMagick
