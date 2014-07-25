@@ -325,6 +325,7 @@ def make_rooms_sylhet
       room_type  = "Suite"
       bed_type = "King"
       num_beds = 1
+      #image_path = "/assets/images/syl_1.jpg"
       image_path = "C:/RubyRailsProjects/hotelsbd/app/assets/images/syl_1.jpg"
       image = File.open(image_path)
     else
