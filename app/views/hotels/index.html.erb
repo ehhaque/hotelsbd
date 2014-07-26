@@ -16,8 +16,8 @@
                   <th>City</th>
                   <th></th>
                   <th></th>
-                  <th></th>
-                  <th></th>
+                  
+                  
                 </tr>
               </thead>
 
@@ -29,12 +29,7 @@
                     <td><%= hotel.star_rating %></td>
                     <td><%= hotel.address %></td>
                     <td><%= hotel.city %></td>
-                    <td><%= link_to 'Add Rooms', new_hotel_room_path(hotel), class: "btn btn-success" %></td>
-                    <td>
-                      <div class="col-md-4"><%= link_to 'Reservations', 
-                        "#",  class: "btn btn-primary"%></div>        
-                      </div>
-                    </td>
+                                        
                     <td><%= link_to 'Details', hotel %></td>
                     <td><%= link_to 'Update', edit_hotel_path(hotel) %></td>
                     <td><%= link_to 'Remove Hotel', hotel, method: :delete, data: { confirm: 'Are you sure you want remove hotel permanently?' } %></td>

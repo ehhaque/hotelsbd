@@ -6,7 +6,7 @@
 
 <% else %>
 	<li><%= link_to "Manage Your Hotel", hotels_path, 
-	class: "btn btn-danger btn-xs" %></li>
+	class: "btn btn-warning btn-xs" %></li>
 	<% if current_user.admin? %>
 	<li><%= link_to "Admin", admin_root_path %></li>
 <% end %>

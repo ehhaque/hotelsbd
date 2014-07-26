@@ -15,7 +15,6 @@ class ReservationsController < ApplicationController
   # GET /reservations/new
   def new
     @room = Room.find(params[:room_id])
-
     @reservation = @room.reservations.new
     
   end
@@ -27,16 +26,10 @@ class ReservationsController < ApplicationController
   # POST /reservations
   # POST /reservations.json
   def create
-    @room = Room.find(params[:room_id])
-
-    
-    #@reservation = @room.reservations.build(reservation_params)
-    @reservation = @room.reservations.build(:user_id => current_user.id,
-                                            :room_id => params[:room_id],
-                                            :reserve_type => params[:reserve_type],
-                                            :start_date => params[:start_date],
-                                            :end_date => params[:end_date] )
-    
+    @room = Room.find(params[:room_id]) 
+    @reservation = @room.reservations.build(reservation_params)
+    @reservation.user_id = current_user.id
+    @reservation.reserve_type = "Reservation"
 
     respond_to do |format|
       if @reservation.save
@@ -81,6 +74,7 @@ class ReservationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reservation_params
-      params.require(:reservation).permit(:reserve_type, :start_date, :end_date, :room_id)
+      params.require(:reservation).permit(:reserve_type, :start_date, :end_date, :room_id, 
+        :user_id, :firstname, :lastname, :request, :phone)
     end
 end

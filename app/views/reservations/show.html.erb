@@ -26,9 +26,30 @@
 </p>
 
 <p>
-  <strong>Customer: $</strong>
+  <strong>Reserved By: $</strong>
   <%= @reservation.user.username %>
 </p>
+
+<p>
+  <strong>Guest First Name: $</strong>
+  <%= @reservation.firstname %>
+</p>
+
+<p>
+  <strong>Guest Last Name: $</strong>
+  <%= @reservation.lastname %>
+</p>
+<p>
+  <strong>Guest Request: $</strong>
+  <%= @reservation.request %>
+</p>
+<p>
+  <strong>Guest Phone: $</strong>
+  <%= @reservation.phone %>
+</p>
+
+
+
 
 <%= link_to 'Edit', edit_reservation_path(@reservation) %> |
 <%= link_to 'Back', reservations_path %>

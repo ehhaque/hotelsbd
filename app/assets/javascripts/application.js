@@ -21,4 +21,6 @@
 
 
 jQuery ->
-  $('#tabs').tabs();
+  $( "#tabs" ).tabs({
+      event: "mouseover"
+    });

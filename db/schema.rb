@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140726012727) do
+ActiveRecord::Schema.define(version: 20140726093642) do
 
   create_table "bed_types", force: true do |t|
     t.string   "name"
@@ -53,6 +53,9 @@ ActiveRecord::Schema.define(version: 20140726012727) do
     t.string   "city"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
+    t.integer  "phone1"
+    t.integer  "phone2"
   end
 
   add_index "hotels", ["city"], name: "index_hotels_on_city"
@@ -75,6 +78,10 @@ ActiveRecord::Schema.define(version: 20140726012727) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "request"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.integer  "phone"
   end
 
   add_index "reservations", ["room_id"], name: "index_reservations_on_room_id"

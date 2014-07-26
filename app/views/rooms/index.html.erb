@@ -1,6 +1,56 @@
 
 
-<h2>All Rooms for <%= @hotel_name %></h2>
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Admin</a></li>
+    <li><a href="#tabs-2">Reservations</a></li>
+    
+  </ul>
+  <div id="tabs-1">
+      <h2><%= @hotel_name %></h2>
+
+          <%= link_to 'Add New Room', new_hotel_room_path(@hotel), class: "btn btn-success" %> 
+          <%= will_paginate @rooms%>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Room type</th>
+                <th>Bed type</th>
+                <th>Num beds</th>
+                <th>Price</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @rooms.each do |room| %>
+                <tr>
+                  
+                  <td><%= link_to room.room_type, hotel_room_path(@hotel, room) %></td>
+                  <td><%= room.bed_type %></td>
+                  <td><%= room.num_beds %></td>
+                  <td><%= room.currency %><%= room.price %></td>
+                  
+                  <td><%= link_to 'Edit', edit_hotel_room_path(@hotel, room, current_user) %></td>
+                  <td><%= link_to 'Delete', [@hotel, room], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <%= will_paginate @rooms%>
+
+          <br>
+
+          
+          <p><%= link_to 'Back', hotels_path %></p>
+
+    
+  </div>
+  <div id="tabs-2">
+    <h2><%= @hotel_name %></h2>
 
 
           <%= will_paginate @rooms%>
@@ -28,9 +78,14 @@
                   <td><%= room.currency %><%= room.price %></td>
                   <td><%= link_to 'Reserve', 
                   new_room_reservation_path(room), 
+                  class: "btn btn-primary" %></td>
+                  <td><%= link_to 'Check In', 
+                  new_room_reservation_path(room), 
                   class: "btn btn-success" %></td>
-                  <td><%= link_to 'Edit', edit_hotel_room_path(@hotel, room) %></td>
-                  <td><%= link_to 'Delete', [@hotel, room], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  <td><%= link_to 'Check Out', 
+                  new_room_reservation_path(room), 
+                  class: "btn btn-danger" %></td>
+                  
                 </tr>
               <% end %>
             </tbody>
@@ -39,8 +94,14 @@
 
           <br>
 
-          <%= link_to 'Add New Room', new_hotel_room_path(@hotel), class: "btn btn-success" %>
+          
           <p><%= link_to 'Back', hotels_path %></p>
+
+    
+  </div>
+  
+</div>
+
 
 
 
