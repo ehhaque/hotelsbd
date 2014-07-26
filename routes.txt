@@ -1,0 +1,115 @@
+                  Prefix Verb   URI Pattern                                     Controller#Action
+            reservations GET    /reservations(.:format)                         reservations#index
+                         POST   /reservations(.:format)                         reservations#create
+         new_reservation GET    /reservations/new(.:format)                     reservations#new
+        edit_reservation GET    /reservations/:id/edit(.:format)                reservations#edit
+             reservation GET    /reservations/:id(.:format)                     reservations#show
+                         PATCH  /reservations/:id(.:format)                     reservations#update
+                         PUT    /reservations/:id(.:format)                     reservations#update
+                         DELETE /reservations/:id(.:format)                     reservations#destroy
+               paintings GET    /paintings(.:format)                            paintings#index
+                         POST   /paintings(.:format)                            paintings#create
+            new_painting GET    /paintings/new(.:format)                        paintings#new
+           edit_painting GET    /paintings/:id/edit(.:format)                   paintings#edit
+                painting GET    /paintings/:id(.:format)                        paintings#show
+                         PATCH  /paintings/:id(.:format)                        paintings#update
+                         PUT    /paintings/:id(.:format)                        paintings#update
+                         DELETE /paintings/:id(.:format)                        paintings#destroy
+               bed_types GET    /bed_types(.:format)                            bed_types#index
+                         POST   /bed_types(.:format)                            bed_types#create
+            new_bed_type GET    /bed_types/new(.:format)                        bed_types#new
+           edit_bed_type GET    /bed_types/:id/edit(.:format)                   bed_types#edit
+                bed_type GET    /bed_types/:id(.:format)                        bed_types#show
+                         PATCH  /bed_types/:id(.:format)                        bed_types#update
+                         PUT    /bed_types/:id(.:format)                        bed_types#update
+                         DELETE /bed_types/:id(.:format)                        bed_types#destroy
+              room_types GET    /room_types(.:format)                           room_types#index
+                         POST   /room_types(.:format)                           room_types#create
+           new_room_type GET    /room_types/new(.:format)                       room_types#new
+          edit_room_type GET    /room_types/:id/edit(.:format)                  room_types#edit
+               room_type GET    /room_types/:id(.:format)                       room_types#show
+                         PATCH  /room_types/:id(.:format)                       room_types#update
+                         PUT    /room_types/:id(.:format)                       room_types#update
+                         DELETE /room_types/:id(.:format)                       room_types#destroy
+            star_ratings GET    /star_ratings(.:format)                         star_ratings#index
+                         POST   /star_ratings(.:format)                         star_ratings#create
+         new_star_rating GET    /star_ratings/new(.:format)                     star_ratings#new
+        edit_star_rating GET    /star_ratings/:id/edit(.:format)                star_ratings#edit
+             star_rating GET    /star_ratings/:id(.:format)                     star_ratings#show
+                         PATCH  /star_ratings/:id(.:format)                     star_ratings#update
+                         PUT    /star_ratings/:id(.:format)                     star_ratings#update
+                         DELETE /star_ratings/:id(.:format)                     star_ratings#destroy
+                  cities GET    /cities(.:format)                               cities#index
+                         POST   /cities(.:format)                               cities#create
+                new_city GET    /cities/new(.:format)                           cities#new
+               edit_city GET    /cities/:id/edit(.:format)                      cities#edit
+                    city GET    /cities/:id(.:format)                           cities#show
+                         PATCH  /cities/:id(.:format)                           cities#update
+                         PUT    /cities/:id(.:format)                           cities#update
+                         DELETE /cities/:id(.:format)                           cities#destroy
+             hotel_rooms GET    /hotels/:hotel_id/rooms(.:format)               rooms#index
+                         POST   /hotels/:hotel_id/rooms(.:format)               rooms#create
+          new_hotel_room GET    /hotels/:hotel_id/rooms/new(.:format)           rooms#new
+         edit_hotel_room GET    /hotels/:hotel_id/rooms/:id/edit(.:format)      rooms#edit
+              hotel_room GET    /hotels/:hotel_id/rooms/:id(.:format)           rooms#show
+                         PATCH  /hotels/:hotel_id/rooms/:id(.:format)           rooms#update
+                         PUT    /hotels/:hotel_id/rooms/:id(.:format)           rooms#update
+                         DELETE /hotels/:hotel_id/rooms/:id(.:format)           rooms#destroy
+                  hotels GET    /hotels(.:format)                               hotels#index
+                         POST   /hotels(.:format)                               hotels#create
+               new_hotel GET    /hotels/new(.:format)                           hotels#new
+              edit_hotel GET    /hotels/:id/edit(.:format)                      hotels#edit
+                   hotel GET    /hotels/:id(.:format)                           hotels#show
+                         PATCH  /hotels/:id(.:format)                           hotels#update
+                         PUT    /hotels/:id(.:format)                           hotels#update
+                         DELETE /hotels/:id(.:format)                           hotels#destroy
+                    root GET    /                                               search#index
+                    home GET    /home(.:format)                                 pages#home
+                  inside GET    /inside(.:format)                               pages#inside
+                         GET    /                                               search#index
+                  search GET    /search(.:format)                               search#search
+              all_hotels GET    /all_hotels(.:format)                           hotels#all_hotels
+                add_room POST   /add_room(.:format)                             rooms#add_room
+        new_user_session GET    /users/sign_in(.:format)                        devise/sessions#new
+            user_session POST   /users/sign_in(.:format)                        devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)                       devise/sessions#destroy
+           user_password POST   /users/password(.:format)                       devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)                   devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format)                  devise/passwords#edit
+                         PATCH  /users/password(.:format)                       devise/passwords#update
+                         PUT    /users/password(.:format)                       devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)                         devise/registrations#cancel
+       user_registration POST   /users(.:format)                                devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)                        devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)                           devise/registrations#edit
+                         PATCH  /users(.:format)                                devise/registrations#update
+                         PUT    /users(.:format)                                devise/registrations#update
+                         DELETE /users(.:format)                                devise/registrations#destroy
+       user_confirmation POST   /users/confirmation(.:format)                   devise/confirmations#create
+   new_user_confirmation GET    /users/confirmation/new(.:format)               devise/confirmations#new
+                         GET    /users/confirmation(.:format)                   devise/confirmations#show
+              admin_root GET    /admin(.:format)                                admin/base#index
+             admin_users GET    /admin/users(.:format)                          admin/users#index
+                         POST   /admin/users(.:format)                          admin/users#create
+          new_admin_user GET    /admin/users/new(.:format)                      admin/users#new
+         edit_admin_user GET    /admin/users/:id/edit(.:format)                 admin/users#edit
+              admin_user GET    /admin/users/:id(.:format)                      admin/users#show
+                         PATCH  /admin/users/:id(.:format)                      admin/users#update
+                         PUT    /admin/users/:id(.:format)                      admin/users#update
+                         DELETE /admin/users/:id(.:format)                      admin/users#destroy
+       room_reservations GET    /rooms/:room_id/reservations(.:format)          reservations#index
+                         POST   /rooms/:room_id/reservations(.:format)          reservations#create
+    new_room_reservation GET    /rooms/:room_id/reservations/new(.:format)      reservations#new
+   edit_room_reservation GET    /rooms/:room_id/reservations/:id/edit(.:format) reservations#edit
+        room_reservation GET    /rooms/:room_id/reservations/:id(.:format)      reservations#show
+                         PATCH  /rooms/:room_id/reservations/:id(.:format)      reservations#update
+                         PUT    /rooms/:room_id/reservations/:id(.:format)      reservations#update
+                         DELETE /rooms/:room_id/reservations/:id(.:format)      reservations#destroy
+                   rooms GET    /rooms(.:format)                                rooms#index
+                         POST   /rooms(.:format)                                rooms#create
+                new_room GET    /rooms/new(.:format)                            rooms#new
+               edit_room GET    /rooms/:id/edit(.:format)                       rooms#edit
+                    room GET    /rooms/:id(.:format)                            rooms#show
+                         PATCH  /rooms/:id(.:format)                            rooms#update
+                         PUT    /rooms/:id(.:format)                            rooms#update
+                         DELETE /rooms/:id(.:format)                            rooms#destroy

@@ -5,8 +5,8 @@
 	class: "btn btn-success btn-xs" %></li>
 
 <% else %>
-	<li><%= link_to "Add Your Hotel", hotels_path, 
-	class: "btn btn-success btn-xs" %></li>
+	<li><%= link_to "Manage Your Hotel", hotels_path, 
+	class: "btn btn-danger btn-xs" %></li>
 	<% if current_user.admin? %>
 	<li><%= link_to "Admin", admin_root_path %></li>
 <% end %>

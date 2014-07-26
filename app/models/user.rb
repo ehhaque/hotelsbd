@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
 
   # Associations
   has_many :hotels
+  has_many :reservations
 
   # Use friendly_id on Users
   extend FriendlyId

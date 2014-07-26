@@ -1,4 +1,6 @@
 Hotelsbd::Application.routes.draw do
+  resources :reservations
+
   resources :paintings
 
   resources :bed_types
@@ -14,6 +16,7 @@ Hotelsbd::Application.routes.draw do
   resources :hotels do
 	   resources :rooms
   end
+
 
   root "search#index"
   get "home", to: "pages#home", as: "home"
@@ -32,5 +35,12 @@ Hotelsbd::Application.routes.draw do
     root "base#index"
     resources :users
   end
+
+# Reservation Route
+   resources :rooms do
+    resources :reservations
+ end
+
+
   
 end
