@@ -1,3 +1,6 @@
+
+
+
 Hotelsbd::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -83,15 +86,14 @@ Hotelsbd::Application.configure do
   config.action_mailer.default_url_options = { :host => 'http://evening-everglades-7074.herokuapp.com/' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.sendgrid.net',
-    #openssl_verify_mode: OpenSSL::SSL::VERIFY_NONE,
-    port: '587',
-    domain: 'heroku.com',
-    authentication: "plain",
-    enable_starttls_auto: true,
-    user_name: ENV['SENDGRID_USERNAME'],
-    password: ENV['SENDGRID_PASSWORD']
-  }
+  address: "smtp.gmail.com",
+  port: 587,
+  domain: "http://evening-everglades-7074.herokuapp.com/",
+  authentication: "plain",
+  enable_starttls_auto: true,
+  user_name: ENV["GMAIL_USERNAME"],
+  password: ENV["GMAIL_PASSWORD"]
+}
 
   # For iamge to load
   config.serve_static_assets = true
