@@ -222,14 +222,12 @@ def make_rooms_dhaka
       room_type  = "Suite"
       bed_type = "King"
       num_beds = 1
-      image_path = "C:/RubyRailsProjects/hotelsbd/app/assets/images/dhaka_3.jpg"
-      image = File.open(image_path)
+      image = File.open("#{Rails.root}/app/assets/images/dhaka_3.jpg", 'rb')
     else
       room_type  = "Luxury Suite"
       bed_type = "Queen"
       num_beds = 2
-      image_path = "C:/RubyRailsProjects/hotelsbd/app/assets/images/dhaka_1.jpg"
-      image = File.open(image_path)
+      image = File.open("#{Rails.root}/app/assets/images/dhaka_1.jpg", 'rb')
     end
     hotel_id = "4"
     
@@ -256,14 +254,12 @@ def make_rooms_coxs
       room_type  = "Suite"
       bed_type = "King"
       num_beds = 1
-      image_path = "C:/RubyRailsProjects/hotelsbd/app/assets/images/coxs_1.jpg"
-      image = File.open(image_path)
+      image = File.open("#{Rails.root}/app/assets/images/coxs_2.jpg", 'rb')
     else
       room_type  = "Luxury Suite"
       bed_type = "Queen"
-      num_beds = 2
-      image_path = "C:/RubyRailsProjects/hotelsbd/app/assets/images/coxs_2.jpg"
-      image = File.open(image_path)
+      num_beds = 2    
+      image = File.open("#{Rails.root}/app/assets/images/coxs_1.jpg", 'rb')
     end
     hotel_id = "1"
     price = rand(70..500)
@@ -308,8 +304,7 @@ def make_rooms_ctg
                                             hotel_id: hotel_id) 
     room.save!
     # Add Image
-    image_path = "C:/RubyRailsProjects/hotelsbd/app/assets/images/Ctg_1.jpg"
-    image = File.open(image_path)
+    image = File.open("#{Rails.root}/app/assets/images/Ctg_1.jpg", 'rb')
     room.paintings.create!(image: image)  
     
   end
@@ -325,15 +320,12 @@ def make_rooms_sylhet
       room_type  = "Suite"
       bed_type = "King"
       num_beds = 1
-      #image_path = "/assets/images/syl_1.jpg"
-      image_path = "C:/RubyRailsProjects/hotelsbd/app/assets/images/syl_1.jpg"
-      image = File.open(image_path)
+      image = File.open("#{Rails.root}/app/assets/images/syl_2.jpg", 'rb')
     else
       room_type  = "Luxury Suite"
       bed_type = "Queen"
       num_beds = 2
-      image_path = "C:/RubyRailsProjects/hotelsbd/app/assets/images/syl_2.jpg"
-      image = File.open(image_path)
+      image = File.open("#{Rails.root}/app/assets/images/syl_1.jpg", 'rb')
     end
     hotel_id = "10"
     
@@ -348,7 +340,11 @@ def make_rooms_sylhet
     room.save!
     # Add Image
     room.paintings.create!(image: image)  
+
+    #MyModel.create!(my_attribute: 'something', 
+    #  image: File.open("#{Rails.root}/app/assets/images/syl_1.jpg", 'rb'))
            
+
     
   end
 end
