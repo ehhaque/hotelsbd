@@ -20,7 +20,3 @@
 //= require_tree .
 
 
-jQuery ->
-  $( "#tabs" ).tabs({
-      event: "mouseover"
-    });
