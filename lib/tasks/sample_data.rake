@@ -48,7 +48,7 @@ def make_cities
               )
   d.save!
   d = City.new(
-                      name: "Cox Bazaar"                      
+                      name: "Coxs Bazaar"                      
               )
   d.save!
   d = City.new(
