@@ -16,6 +16,7 @@ gem "ransack"
 #gem "rmagick"
 gem "mini_magick"
 gem "carrierwave"
+gem 'mandrill-api'
 
 group :doc do
   gem 'sdoc', require: false

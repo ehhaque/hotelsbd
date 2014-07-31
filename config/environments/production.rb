@@ -83,18 +83,18 @@ Hotelsbd::Application.configure do
   
   # Mailer
   config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options = { :host => 'http://evening-everglades-7074.herokuapp.com/' }
+  config.action_mailer.default_url_options = { :host => 'evening-everglades-7074.herokuapp.com/' }
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-  address: "smtp.gmail.com",
-  openssl_verify_mode: OpenSSL::SSL::VERIFY_NONE,
-  port: 587,
-  domain: "http://evening-everglades-7074.herokuapp.com/",
-  authentication: "plain",
-  enable_starttls_auto: true,
-  user_name: ENV["GMAIL_USERNAME"],
-  password: ENV["GMAIL_PASSWORD"]
-}
+  
+config.action_mailer.smtp_settings = {
+    :address   => ENV["SMTP_SERVER"],
+    :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
+    :enable_starttls_auto => true, # detects and uses STARTTLS
+    :user_name => ENV["SMTP_USER"],
+    :password  => ENV["SMTP_PWD"], # SMTP password is any valid API key
+    :authentication => 'login', # Mandrill supports 'plain' or 'login'
+    :domain => 'yourdomain.com', # your domain to identify your server when connecting
+  }
 
   # For iamge to load
   config.serve_static_assets = true
