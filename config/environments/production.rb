@@ -95,7 +95,9 @@ Hotelsbd::Application.configure do
     :address   => "smtp.mandrillapp.com",
     :port      => 587,
     :user_name => ENV["SMTP_USER"],
-    :password  => ENV["SMTP_PWD"]
+    :password  => ENV["SMTP_PWD"],
+    :enable_starttls_auto => true,
+    :authentication => 'login'
   }
 
   # For iamge to load
