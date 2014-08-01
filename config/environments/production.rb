@@ -97,7 +97,8 @@ Hotelsbd::Application.configure do
     :user_name => ENV["SMTP_USER"],
     :password  => ENV["SMTP_PWD"],
     :enable_starttls_auto => true,
-    :authentication => 'login'
+    :authentication => 'plain',
+    :domain => 'herokuapp.com'
   }
 
   # For iamge to load
