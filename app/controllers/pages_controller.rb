@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   end
   
   def inside
-  	redirect_to hotels_path
+  	redirect_to root_path
   end 
     
 end

@@ -6,7 +6,7 @@ class SearchController < ApplicationController
 
   def search
   	#UserMailer.reserve_confirmation.deliver
-  	UserMailer.email_name.deliver
+  	#UserMailer.email_name.deliver
   	@search = Room.search(params[:q])
     @rooms = @search.result.includes(:hotel).paginate(page: params[:page])      
 
