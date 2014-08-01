@@ -13,9 +13,19 @@ class UserMailer < ActionMailer::Base
   end
 
   def email_name
-    mail :subject => "Mandrill rides the Rails!",
-         :to      => "ehaque@gmail.com",
+    mail :subject => "Mandrill Test!",
+         :to      => "ehaque@gmail.com", 
          :from    => "admin@HotelBD.com"
     headers['X-MC-Template'] = "Hello"  # template
   end
+
+  def reservation_email_conf(reservation)
+    @reservation = reservation
+    mail :subject => "HotelsBD Reservation Confirmation Email",
+         :to      => "#{reservation.guest_email}", 
+         :from    => "admin@HotelBD.com"
+    headers['X-MC-Template'] = "Hello"  # template
+  end
+
+  
 end

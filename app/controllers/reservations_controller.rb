@@ -1,4 +1,5 @@
 class ReservationsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
 
   # GET /reservations
@@ -33,6 +34,7 @@ class ReservationsController < ApplicationController
 
     respond_to do |format|
       if @reservation.save
+        UserMailer.reservation_email_conf(@reservation).deliver
         format.html { redirect_to @reservation, notice: 'Reservation was successfully created.' }
         format.json { render action: 'show', status: :created, location: @reservation }
       else
@@ -75,6 +77,6 @@ class ReservationsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def reservation_params
       params.require(:reservation).permit(:reserve_type, :start_date, :end_date, :room_id, 
-        :user_id, :firstname, :lastname, :request, :phone )
+        :user_id, :firstname, :lastname, :request, :phone, :guest_email )
     end
 end
